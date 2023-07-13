@@ -1,52 +1,76 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     text-decoration: none;
 }
-.container{
-    display:flex;
+
+.container {
+    display: flex;
 }
-main{
+
+main {
     width: 100%;
     padding: 20px;
 }
-.sidebar{
+
+.sidebar {
     background: #fff;
     color: #000;
     height: 100vh;
     width: 200px;
-    transition: all 0.5s;
+    align-items: center;
+    /* transition: all 0.5s; */
 }
-.top_section{
+
+.top_section {
     display: flex;
-    align-items:center;
-    padding:20px 15px;
+    align-items: center;
+    padding: 20px 15px;
 }
-.logo{
+
+.logo {
     font-size: 30px;
 }
-.bars{
+
+.bars {
     display: flex;
     font-size: 25px;
     margin-left: 50px;
     margin-top: 10px;
     margin-bottom: 15px;
 }
-.hr-bar{
+
+.hr-bar {
     width: 90%;
     margin-left: 5%;
 }
-.hr-bar2{
-  width: 90%;
-  margin-left: 5%;
-  margin-top: 28em;
+
+.hr-bar2 {
+    width: 90%;
+    margin-left: 5%;
 }
-.bottom_text{
-  padding-top: 5px;
-  justify-content: center;
-  text-align: center;
+.sidebarBottom{
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
-.link{
+.bottom_text:hover{
+    background-color: #fff;
+}
+/* .bottom_text:active{
+    background-color: #fff;
+} */
+
+.bottom_text {
+    background-color: #fff;
+    color: #636363;
+    padding-top: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.link {
     display: flex;
     color: #000;
     padding: 10px 15px;
@@ -57,16 +81,54 @@ main{
     gap: 15px;
     transition: all 0.5s;
 }
-.link:hover{
+
+.link:hover {
     color: #1A64AE;
     transition: all 0.5s;
 }
-.active{
-    
+
+.active {
+
     background: lightskyblue;
     color: #000;
 }
 
-.icon, .link_text{
+.icon,
+.link_text {
     font-size: 20px;
+}
+
+.searchbar {
+    position: relative;
+    width: 85%;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.searchField {
+    flex: 1;
+    justify-content: space-between;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.DocContainer {
+    background-color: #fff;
+    border-radius: 20px;
+    margin-left: 15px;
+    margin-right: 20px;
+}
+.DocContainer .header {
+    padding: 20px;
+    display: flex;
+    font-size: 24px;
+    color: #000;
+    justify-content: center;
+}
+.DocContainer .content {
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+    font-size: 12px;
+    color: #1E1E1E;
 }

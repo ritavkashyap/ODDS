@@ -9,29 +9,40 @@ import Documentation from './pages/Documentation.jsx';
 import TrajectoryStudy from './pages/TrajectoryStudy.jsx';
 import CameraStatus from './pages/CameraStatus.jsx';
 import ContactUs from './pages/ContactUs';
+import PreviousData from './pages/PreviousData';
 import TermsAndCondition from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import Topbar from './components/Topbar';
+import Settings from './pages/Settings';
+import Profile from './pages/Profile';
+import Notification from './pages/Notification';
 
+// import SerachBar from './components/SerachBar';
 
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
       <Sidebar>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/CameraStatus" element={<CameraStatus />} />
-          <Route path="/TrajectoryStudy" element={<TrajectoryStudy />} />
-          <Route path="/DataVisualization" element={<DataVisualization />} />
-          <Route path="/Documentation" element={<Documentation />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path='/TermsAndConditions' element={<TermsAndCondition />} />
-          <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>} />
-        </Routes>
+          <Topbar />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/CameraStatus" element={<CameraStatus />} />
+            <Route path="/TrajectoryStudy" element={<TrajectoryStudy />} />
+            <Route path="/DataVisualization" element={<DataVisualization />} />
+            <Route path="/Documentation" element={<Documentation />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path='/TermsAndConditions' element={<TermsAndCondition />} />
+            <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} />
+            <Route path='/Settings' element={<Settings />} />
+            <Route path='/Profile' element={<Profile />} />
+            <Route path='/Notification' element={<Notification />} />
+            <Route path='/PreviousData' element={<PreviousData />} />
+          </Routes>
       </Sidebar>
     </BrowserRouter>
   );
-};
+}
 
-export default App;
+export default App

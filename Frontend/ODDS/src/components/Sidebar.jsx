@@ -6,13 +6,12 @@ import {
     FaCamera,
     FaRoute,
     FaChartLine,
+    FaDatabase,
     FaBook,
     FaUserFriends,
     FaPhoneAlt
 } from "react-icons/fa";
-import { NavLink, RouterProvider } from 'react-router-dom';
-import TermsAndConditions from '../pages/TermsAndConditions';
-import PrivacyPolicy from '../pages/PrivacyPolicy';
+import { NavLink } from 'react-router-dom';
 
 
 const Sidebar = ({ children }) => {
@@ -40,6 +39,11 @@ const Sidebar = ({ children }) => {
             icon: <FaChartLine />
         },
         {
+            path: "/PreviousData",
+            name: "Previous Data",
+            icon: <FaDatabase/>
+        },
+        {
             path: "/Documentation",
             name: "Documentation",
             icon: <FaBook />
@@ -59,7 +63,7 @@ const Sidebar = ({ children }) => {
         <div className="container">
             <div style={{ width: isOpen ? "300px" : "80px" }} className="sidebar">
                 <div className="top_section">
-                    <img src={Logo} alt="Full-logo" style={{ display: isOpen ? "block" : "none" }} className="logo" />
+                    <NavLink to={"/"} key={1} style={{ backgroundColor: '#FFF' }}><img src={Logo} alt="Full-logo" style={{ display: isOpen ? "block" : "none" }} className="logo" /></NavLink>
                     {/* <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1> */}
                     <div style={{ marginLeft: isOpen ? "40px" : "8px" }} className="bars">
                         <FaBars onClick={toggle} />
@@ -74,17 +78,15 @@ const Sidebar = ({ children }) => {
                         </NavLink>
                     ))
                 }
-                <div className="bottom_section">
+                <div className="sidebarBottom">
                     <hr className='hr-bar2' style={{ display: isOpen ? "block" : "none" }} />
-                    <p className='bottom_text' style={{ display: isOpen ? "block" : "none" }}><a href="/TermsAndConditions" sty>Terms and Conditions</a></p>
-                    <p className='bottom_text' style={{ display: isOpen ? "block" : "none" }}><a href="/PrivacyPolicy" >Privacy Policy</a></p>
+                    <NavLink to='/TermsAndConditions'><p className='bottom_text' style={{ display: isOpen ? "block" : "none" }}>Terms and Conditions</p></NavLink>
+                    <NavLink to='/PrivacyPolicy'><p className='bottom_text' style={{ display: isOpen ? "block" : "none" }}>Privacy Policy</p></NavLink>
                 </div>
             </div>
             <main>{children}</main>
         </div>
     );
-
 };
-
 
 export default Sidebar;
