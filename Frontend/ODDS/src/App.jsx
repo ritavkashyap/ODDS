@@ -12,10 +12,10 @@ import ContactUs from './pages/ContactUs';
 import PreviousData from './pages/PreviousData';
 import TermsAndCondition from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy'
-import Topbar from './components/Topbar';
 import Settings from './pages/Settings';
 import Profile from './pages/Profile';
 import Notification from './pages/Notification';
+import Topbar from './components/Topbar'
 
 // import SerachBar from './components/SerachBar';
 
@@ -23,7 +23,7 @@ function App() {
   return (
     <BrowserRouter>
       <Sidebar>
-          <Topbar />
+      <Topbar />
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />

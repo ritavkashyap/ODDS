@@ -2,8 +2,10 @@ import React from 'react';
 
 function TrajectoryStudy() {
   return (
-    <div>
-        <h1>TrajectoryStudy</h1>
+    <div className="container">
+      <div className="scrolling">
+
+      </div>
     </div>
   )
 }

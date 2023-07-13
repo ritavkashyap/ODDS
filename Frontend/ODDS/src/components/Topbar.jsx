@@ -5,13 +5,11 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
 import {NavLink} from 'react-router-dom'
-import { Padding } from "@mui/icons-material";
-
 
 
 const Topbar = () => {
   return (
-    <Box display="flex" justifyContent="space-between"  p={2}>
+    <Box display="flex" justifyContent="space-between" position='sticky' p={2}>
       <Box display="flex" className="searchbar"> 
         <Box
           display="flex" className="searchField"

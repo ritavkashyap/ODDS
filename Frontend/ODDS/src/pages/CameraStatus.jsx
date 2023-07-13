@@ -3,8 +3,8 @@ import React from 'react';
 
 function CameraStatus() {
   return (
-    <div>
-      <h1>CameraStatus</h1>
+    <div className="container">
+      <div className="scrolling"></div>
     </div>
   )
 }
