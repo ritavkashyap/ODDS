@@ -1,9 +1,12 @@
 import React from 'react'
+import Maps from '../components/Maps'
 
 function Dashboard() {
   return (
     <div>
-        <h1>Dashboard</h1>
+        <div className="Container">
+        <Maps />
+        </div>
     </div>
   )
 }

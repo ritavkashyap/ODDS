@@ -1,12 +1,13 @@
 import React from 'react';
+import Maps from '../components/Maps';
 
 function TrajectoryStudy() {
   return (
-    <div className="container">
-      <div className="scrolling">
-
-      </div>
+    <div>
+      Trajectory Study
+      <Maps />
     </div>
+
   )
 }
 
