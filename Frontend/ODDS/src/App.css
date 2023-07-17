@@ -30,6 +30,9 @@ main {
     height: 100vh;
     width: 200px;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /* transition: all 0.5s; */
 }
 
@@ -61,22 +64,32 @@ main {
     margin-left: 5%;
 }
 .sidebarBottom{
-    height: 45vh;
+    /* height: 45vh; */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: end;
 }
-.bottom_text:hover{
+.bottom_text1:hover{
     background-color: #fff;
 }
-/* .bottom_text:active{
-    background-color: #fff;
-} */
 
-.bottom_text {
+.bottom_text1 {
     background-color: #fff;
     color: #636363;
     padding-top: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.bottom_text2:hover{
+    background-color: #fff;
+}
+
+.bottom_text2 {
+    background-color: #fff;
+    color: #636363;
+    padding-top: 10px;
+    padding-bottom: 10px;
     justify-content: center;
     text-align: center;
 }
