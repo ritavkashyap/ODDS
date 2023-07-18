@@ -41,7 +41,7 @@ const Sidebar = ({ children }) => {
         {
             path: "/PreviousData",
             name: "Previous Data",
-            icon: <FaDatabase/>
+            icon: <FaDatabase />
         },
         {
             path: "/Documentation",
@@ -62,26 +62,28 @@ const Sidebar = ({ children }) => {
     return (
         <div className="container">
             <div style={{ width: isOpen ? "300px" : "80px" }} className="sidebar">
-                <div className="top_section">
-                    <NavLink to={"/"} key={1} style={{ backgroundColor: '#FFF' }}><img src={Logo} alt="Full-logo" style={{ display: isOpen ? "block" : "none" }} className="logo" /></NavLink>
-                    {/* <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1> */}
-                    <div style={{ marginLeft: isOpen ? "40px" : "8px" }} className="bars">
-                        <FaBars onClick={toggle} />
+                <div>
+                    <div className="top_section">
+                        <NavLink to={"/"} key={1} style={{ backgroundColor: '#FFF' }}><img src={Logo} alt="Full-logo" style={{ display: isOpen ? "block" : "none" }} className="logo" /></NavLink>
+                        {/* <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1> */}
+                        <div style={{ marginLeft: isOpen ? "40px" : "8px" }} className="bars">
+                            <FaBars onClick={toggle} />
+                        </div>
                     </div>
+                    <hr className='hr-bar' style={{ display: isOpen ? "block" : "none" }} />
+                    {
+                        menuItem.map((item, index) => (
+                            <NavLink to={item.path} key={index} className="link" >
+                                <div className="icon">{item.icon}</div>
+                                <div style={{ display: isOpen ? "block" : "none" }} className="link_text">{item.name}</div>
+                            </NavLink>
+                        ))
+                    }
                 </div>
-                <hr className='hr-bar' style={{ display: isOpen ? "block" : "none" }} />
-                {
-                    menuItem.map((item, index) => (
-                        <NavLink to={item.path} key={index} className="link" >
-                            <div className="icon">{item.icon}</div>
-                            <div style={{ display: isOpen ? "block" : "none" }} className="link_text">{item.name}</div>
-                        </NavLink>
-                    ))
-                }
                 <div className="sidebarBottom">
                     <hr className='hr-bar2' style={{ display: isOpen ? "block" : "none" }} />
-                    <NavLink to='/TermsAndConditions'><p className='bottom_text' style={{ display: isOpen ? "block" : "none" }}>Terms and Conditions</p></NavLink>
-                    <NavLink to='/PrivacyPolicy'><p className='bottom_text' style={{ display: isOpen ? "block" : "none" }}>Privacy Policy</p></NavLink>
+                    <NavLink to='/TermsAndConditions'><p className='bottom_text1' style={{ display: isOpen ? "block" : "none" }}>Terms and Conditions</p></NavLink>
+                    <NavLink to='/PrivacyPolicy'><p className='bottom_text2' style={{ display: isOpen ? "block" : "none" }}>Privacy Policy</p></NavLink>
                 </div>
             </div>
             <main>{children}</main>
