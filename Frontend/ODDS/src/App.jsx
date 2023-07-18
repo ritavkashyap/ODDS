@@ -16,6 +16,7 @@ import Settings from './pages/Settings';
 import Profile from './pages/Profile';
 import Notification from './pages/Notification';
 import Topbar from './components/Topbar'
+import AddNewCamera from './pages/AddNewCamera';
 
 // import SerachBar from './components/SerachBar';
 
@@ -26,7 +27,7 @@ function App() {
       <Topbar />
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/CameraStatus" element={<CameraStatus />} />
             <Route path="/TrajectoryStudy" element={<TrajectoryStudy />} />
             <Route path="/DataVisualization" element={<DataVisualization />} />
@@ -39,6 +40,7 @@ function App() {
             <Route path='/Profile' element={<Profile />} />
             <Route path='/Notification' element={<Notification />} />
             <Route path='/PreviousData' element={<PreviousData />} />
+            <Route path='/AddNewCamera' element={<AddNewCamera />} />
           </Routes>
       </Sidebar>
     </BrowserRouter>

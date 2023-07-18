@@ -163,3 +163,63 @@ main {
     font-size: 20px;
     color: #1E1E1E;
 }
+
+.CamBox {
+    width: 82vw;
+    display: flex;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.ImageBox {
+    flex: 1;
+}
+.CamBody {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.CamHeader {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.miniBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+.addNewBtnCont {
+    display: flex;
+    justify-content: end; 
+    margin-right: 30px;  
+}
+.addNewBtn {
+    padding: 10px;
+    width: 100px;
+}
+.addNewBtn:hover {
+    background-color: lightskyblue;
+    border: #000 solid 1px;
+}
+
+.AddNewCamCont {
+    height: 80vh;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.cameraInput {
+    padding: 1.5rem;
+}
