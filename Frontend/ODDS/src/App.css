@@ -163,9 +163,16 @@ main {
     font-size: 20px;
     color: #1E1E1E;
 }
+.CamContainer {
+    display: flex;
+    height: 85vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+}
 
 .CamBox {
-    width: 82vw;
+    width: 80vw;
     display: flex;
     background-color: #fff;
     border-radius: 20px;
@@ -188,7 +195,7 @@ main {
     justify-content: center;
     padding: 10px;
     margin-right: 20px;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
 }
 .miniBox {
@@ -202,6 +209,7 @@ main {
     display: flex;
     justify-content: end; 
     margin-right: 30px;  
+    margin-bottom: 10px;
 }
 .addNewBtn {
     padding: 10px;

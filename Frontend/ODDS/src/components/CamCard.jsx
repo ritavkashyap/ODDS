@@ -1,6 +1,7 @@
 import React from 'react'
 
 function CamCard(props) {
+    console.log(props)
     return (
         <div className="CamBox">
             <div className="ImageBox">

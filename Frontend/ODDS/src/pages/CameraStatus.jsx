@@ -12,7 +12,7 @@ function CameraStatus() {
   const CamCards = data.map(item =>{
     return(
       <CamCard 
-      Title = {item.title}
+      title = {item.title}
       ipAddress = {item.ipAddress}
       latitude = {item.latitude}
       longitude = {item.longitude}
@@ -28,9 +28,9 @@ function CameraStatus() {
       <div className='addNewBtnCont'>
         <button className='addNewBtn' onClick={routeChange}>Add New</button>
       </div>
-      <div className="container">
+      <div className="CamContainer">
         <div className="scrolling">
-          
+          {CamCards}
         </div>
       </div>
     </div>
