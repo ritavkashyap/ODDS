@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import CamCard from '../components/CamCard';
-import data from "../pages/data"
-import { useNavigate } from "react-router-dom";
-import CamCard from '../components/CamCard';
-import data from "../pages/data"
+// import data from "../pages/data"
+// import { useNavigate } from "react-router-dom";
+// import CamCard from '../components/CamCard';
+// import data from "../pages/data"
 
 function CameraStatus() {
 
@@ -61,17 +61,8 @@ function CameraStatus() {
           {CamCards}
         </div>
       </div>
-    <div>
-      <div className='addNewBtnCont'>
-        <button className='addNewBtn' onClick={routeChange}>Add New</button>
-      </div>
-      <div className="CamContainer">
-        <div className="scrolling">
-          {CamCards}
-        </div>
-      </div>
     </div>
   )
-}
+  }
 
 export default CameraStatus;
