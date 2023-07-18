@@ -12,6 +12,7 @@ function CameraStatus() {
   const CamCards = data.map(item =>{
     return(
       <CamCard 
+      id = {item.id}
       title = {item.title}
       ipAddress = {item.ipAddress}
       latitude = {item.latitude}
@@ -19,7 +20,7 @@ function CameraStatus() {
       altitude = {item.altitude}
       resolution = {item.resolution}
       framerate = {item.framerate}
-      P2PUID = {item.p2puid}
+      p2puid = {item.p2puid}
       />
     )
   })

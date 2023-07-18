@@ -183,6 +183,8 @@ main {
 }
 .ImageBox {
     flex: 1;
+    display: flex;
+    justify-content: center;
 }
 .CamBody {
     flex: 3;
@@ -192,7 +194,7 @@ main {
 }
 .CamHeader {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px;
     margin-right: 20px;
     font-size: 28px;

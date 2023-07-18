@@ -1,5 +1,4 @@
-export default [
-    {
+export default [{
         id: "1",
         title: "Cam1",
         ipAddress: "127.0.0.1",
@@ -33,8 +32,8 @@ export default [
         p2puid: "UXA9G1S2DFVSHFEJ111ADSCC "
     },
     {
-        id: "3",
-        title: "Cam3",
+        id: "4",
+        title: "Cam4",
         ipAddress: "127.0.0.3",
         latitude: "26.13",
         longitude: "91.48",
@@ -44,8 +43,8 @@ export default [
         p2puid: "UXA9G1S2DFVSHFEJ111ADSCC "
     },
     {
-        id: "3",
-        title: "Cam3",
+        id: "5",
+        title: "Cam5",
         ipAddress: "127.0.0.3",
         latitude: "26.13",
         longitude: "91.48",
@@ -55,8 +54,8 @@ export default [
         p2puid: "UXA9G1S2DFVSHFEJ111ADSCC "
     },
     {
-        id: "3",
-        title: "Cam3",
+        id: "6",
+        title: "Cam6",
         ipAddress: "127.0.0.3",
         latitude: "26.13",
         longitude: "91.48",
@@ -65,5 +64,4 @@ export default [
         framerate: "30FPS",
         p2puid: "UXA9G1S2DFVSHFEJ111ADSCC "
     }
-
-]
+    ]

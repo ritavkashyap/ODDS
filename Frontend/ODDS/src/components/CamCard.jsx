@@ -1,15 +1,27 @@
 import React from 'react'
+import data from "../pages/data"
 
 function CamCard(props) {
+    var deleteCamera = (id)=> {
+        for (let i = 0; i < data.length; i++) {
+            const element = data[i];
+            if(element["id"]===id){
+                data.splice(i,1)
+                console.log(id)
+            }
+            
+        }
+    }
     console.log(props)
     return (
         <div className="CamBox">
             <div className="ImageBox">
-                <img src="" alt="" />
+                <img src="src/assets/IP-Camera.jpg" width='150px' alt="" />
             </div>
             <div className="CamBody">
                 <div className="CamHeader">
                     {props.title}
+                    <button className='btn' onClick={deleteCamera(props.id)}>Delete</button>
                 </div>
                 <div className="miniBox">
                     <p>Status: </p>
