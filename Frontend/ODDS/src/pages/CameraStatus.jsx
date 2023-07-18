@@ -51,6 +51,7 @@ function CameraStatus() {
     )
   })
   return (
+    
     <div>
       <div className='addNewBtnCont'>
         <button className='addNewBtn' onClick={routeChange}>Add New</button>
@@ -73,4 +74,4 @@ function CameraStatus() {
   )
 }
 
-export default CameraStatus
+export default CameraStatus;
