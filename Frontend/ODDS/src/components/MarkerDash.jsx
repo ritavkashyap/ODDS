@@ -1,30 +1,48 @@
-import React from 'react'
-import { Marker } from 'react-map-gl'
+import React, { useState, useEffect } from 'react'
+import Map, { Marker, Popup } from 'react-map-gl'
 import '../styles/popup.css'
+import { FaBroadcastTower } from 'react-icons/fa';
 
 function MarkerDash(props) {
-    console.log(props)
-    const lats = parseInt(props.latitude, 10)
-    const lngs = parseInt(props.longitude, 10)
-    console.log(lats, lngs)
+    const [camdata, setCamdata] = useState(null);
+    useEffect(() => {
+        const listener = e => {
+            if (e.key === "Escape") {
+                setCamdata(null);
+            }
+        };
+        window.addEventListener("keydown", listener);
+
+        return () => {
+            window.removeEventListener("keydown", listener);
+        };
+    }, []);
+    console.log(props.title)
     return (
-        <div>
-            <a className="button" href="#popup1">
-                <Marker latitude={props.latitude} longitude={props.longitude} color='red' ></Marker>
-            </a>
-            <div id="popup1" className="overlay">
-                <div className="popup">
-                    <h2>Here i am</h2>
-                    <a className="close" href="#">
-                        ×
-                    </a>
-                    <div className="content">
-                        Thank to pop me out of that button, but now i'm done so you can close
-                        this window.
+
+        <div className="marker">
+
+            <Marker
+                latitude={props.latitude}
+                longitude={props.longitude}
+                className='mapcam'
+                onClick={setCamdata}
+            >
+                <a className="button" href="#popup1"><FaBroadcastTower size='1.5rem' color='green' /></a>
+
+                <div id="popup1" className="overlay">
+                    <div className="popup">
+                        <h2>{props.title} Status</h2>
+                        <a className="close" href="#">&times;</a>
+                        <div className="content">
+                        {props.title}
+                        {props.altitude}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Marker>
         </div>
+
     )
 }
 

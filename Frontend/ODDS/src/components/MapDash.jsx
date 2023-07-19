@@ -10,6 +10,8 @@ function MapDash(props) {
         console.log(item.latitude)
         return(
           <MarkerDash 
+          title = {item.title}
+          altitude = {item.altitude}
           latitude = {item.latitude}
           longitude = {item.longitude}
           />
