@@ -4,7 +4,9 @@ import Maps from '../components/Maps';
 function TrajectoryStudy() {
   return (
     <div>
-      
+      <div className="Container">
+        <Maps />
+        </div>
     </div>
 
   )
