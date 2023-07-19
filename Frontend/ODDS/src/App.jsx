@@ -21,6 +21,26 @@ import AddNewCamera from './pages/AddNewCamera';
 // import SerachBar from './components/SerachBar';
 
 function App() {
+  // const [data, setData] = React.useState([])
+
+  
+  // function createCameraArray(array) {
+  //   const newArray = [];
+  //   for(let i=0; i<array.length; i++){
+  //     newArray.push(array[i]);
+  //   }
+  //   console.log(newArray)
+  //   return newArray;
+  // }
+
+  // // // API call
+  // React.useEffect(function() {
+  //   fetch("http://127.0.0.1:8000/api/cameraModels/")
+  //     .then(res => res.json()) // Parse the response as JSON
+  //     .then(data => {setData(createCameraArray(data));})
+  //   }, []);
+
+
   return (
     <BrowserRouter>
       <Sidebar>
@@ -29,7 +49,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/CameraStatus" element={<CameraStatus />} />
-            <Route path="/TrajectoryStudy" element={<TrajectoryStudy />} />
+            <Route path="/TrajectoryStudy" element={<TrajectoryStudy/>} />
             <Route path="/DataVisualization" element={<DataVisualization />} />
             <Route path="/Documentation" element={<Documentation />} />
             <Route path="/AboutUs" element={<AboutUs />} />

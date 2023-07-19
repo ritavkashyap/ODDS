@@ -1,6 +1,5 @@
 import React from 'react'
 import MapDash from '../components/MapDash'
-import PopUpDroneDash from '../components/PopUpDroneDash'
 
 function Dashboard() {
   return (

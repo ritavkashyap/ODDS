@@ -6,8 +6,8 @@ import CamCard from '../components/CamCard';
 // import CamCard from '../components/CamCard';
 // import data from "../pages/data"
 
-function CameraStatus() {
-
+function CameraStatus(props) {
+console.log(props)
   const [data, setData] = React.useState([])
   
   function createCameraArray(array) {
@@ -20,7 +20,7 @@ function CameraStatus() {
   }
 
 
-  // API call
+  // // API call
   React.useEffect(function() {
     fetch("http://127.0.0.1:8000/api/cameraModels/")
       .then(res => res.json()) // Parse the response as JSON
