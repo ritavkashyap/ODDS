@@ -63,7 +63,8 @@ main {
     width: 90%;
     margin-left: 5%;
 }
-.sidebarBottom{
+.sidebarBottom{ 
+    
     /* height: 45vh; */
     width: 100%;
     display: flex;
@@ -112,7 +113,6 @@ main {
 }
 
 .active {
-
     background: lightskyblue;
     color: #000;
 }
@@ -164,6 +164,7 @@ main {
     color: #1E1E1E;
 }
 .CamContainer {
+    justify-content: center;
     display: flex;
     height: 85vh;
     overflow-y: auto;
@@ -214,12 +215,16 @@ main {
     margin-bottom: 10px;
 }
 .addNewBtn {
+    transition: 0.2s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 10px;
     width: 100px;
+    border: #000 solid 1px;
 }
 .addNewBtn:hover {
+    transition: 0.2s;
     background-color: lightskyblue;
-    border: #000 solid 1px;
+    
 }
 
 .AddNewCamCont {
@@ -232,4 +237,34 @@ main {
 }
 .cameraInput {
     padding: 1.5rem;
+}
+.delbtn {
+    transition: 0.2s;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0.5rem;
+    border: 1px solid black;
+}
+.editbtn {
+    transition: 0.2s;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0.5rem;
+    border: 1px solid black;
+}
+.editbtn:hover {
+    transition: 0.2s;
+    background-color: rgb(20, 182, 20);
+    color: #fff;
+    cursor: pointer;
+}
+.delbtn:hover {
+    transition: 0.2s;
+    background-color: rgb(240, 34, 34);
+    color: #fff;
+    cursor: pointer;
 }

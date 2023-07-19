@@ -1,8 +1,20 @@
 import React, { useState } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import Map, { Marker } from 'react-map-gl'
+import Map from 'react-map-gl'
+import MarkerDash from './MarkerDash';
 
-function MapDash() {
+function MapDash(props) {
+    const data = props.data;
+    // console.log(data)
+    const MarkerDashes = data.map(item =>{
+        console.log(item.latitude)
+        return(
+          <MarkerDash 
+          latitude = {item.latitude}
+          longitude = {item.longitude}
+          />
+        )
+      })
     const [lng, setLng] = useState(92.7880);
     const [lat, setLat] = useState(24.7560);
     const [zoom, setZoom] = useState(14);
@@ -17,25 +29,7 @@ function MapDash() {
             }}
             mapStyle="mapbox://styles/mapbox/streets-v9"
         >
-            <Marker latitude={lat} longitude={lng} color='red'>
-                <div>
-                    <a className="button" href="#popup1">
-                        Let me Pop up
-                    </a>
-                    <div id="popup1" className="overlay">
-                        <div className="popup">
-                            <h2>Here i am</h2>
-                            <a className="close" href="#">
-                                ×
-                            </a>
-                            <div className="content">
-                                Thank to pop me out of that button, but now i'm done so you can close
-                                this window.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Marker>
+            {MarkerDashes}
         </Map>
     )
 }

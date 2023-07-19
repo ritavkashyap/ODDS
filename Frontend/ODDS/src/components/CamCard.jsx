@@ -2,14 +2,24 @@ import React from 'react'
 import data from "../pages/data"
 
 function CamCard(props) {
-    var deleteCamera = (id)=> {
+    var deleteCamera = (id) => {
         for (let i = 0; i < data.length; i++) {
             const element = data[i];
-            if(element["id"]===id){
-                data.splice(i,1)
+            if (element["id"] === id) {
+                data.splice(i, 1)
                 console.log(id)
             }
-            
+
+        }
+    }
+    var editCamera = (id) => {
+        for (let i = 0; i < data.length; i++) {
+            const element = data[i];
+            if (element["id"] === id) {
+                data.splice(i, 1)
+                console.log(id)
+            }
+
         }
     }
     console.log(props)
@@ -21,7 +31,10 @@ function CamCard(props) {
             <div className="CamBody">
                 <div className="CamHeader">
                     {props.title}
-                    <button className='btn' onClick={deleteCamera(props.id)}>Delete</button>
+                    <div className='btndiv'>
+                        <button className='editbtn' onClick={editCamera(props.id)}>Edit</button>
+                        <button className='delbtn' onClick={deleteCamera(props.id)}>Delete</button>
+                    </div>
                 </div>
                 <div className="miniBox">
                     <p>Status: </p>
@@ -30,8 +43,8 @@ function CamCard(props) {
                 </div>
                 <div className="miniBox">
                     <p>ip Address: {props.ipAddress}</p>
-                    <p>Frame Rate: {props.framerate}</p>
-                    <p>Resolution: {props.resolution}</p>
+                    <p>Frame Rate: {props.framerate} FPS</p>
+                    <p>Resolution: {props.resolution}p</p>
                 </div>
                 <div className="miniBox">
                     <p>Latitude: {props.latitude}</p>

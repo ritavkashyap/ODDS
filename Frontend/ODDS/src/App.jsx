@@ -21,47 +21,46 @@ import AddNewCamera from './pages/AddNewCamera';
 // import SerachBar from './components/SerachBar';
 
 function App() {
-  // const [data, setData] = React.useState([])
+  const [data, setData] = React.useState([])
 
-  
-  // function createCameraArray(array) {
-  //   const newArray = [];
-  //   for(let i=0; i<array.length; i++){
-  //     newArray.push(array[i]);
-  //   }
-  //   console.log(newArray)
-  //   return newArray;
-  // }
+console.log(data)
+  function createCameraArray(array) {
+    const newArray = [];
+    for (let i = 0; i < array.length; i++) {
+      newArray.push(array[i]);
+    }
+    console.log(newArray)
+    return newArray;
+  }
 
-  // // // API call
-  // React.useEffect(function() {
-  //   fetch("http://127.0.0.1:8000/api/cameraModels/")
-  //     .then(res => res.json()) // Parse the response as JSON
-  //     .then(data => {setData(createCameraArray(data));})
-  //   }, []);
-
+  // // API call
+  React.useEffect(function () {
+    fetch("http://127.0.0.1:8000/api/cameraModels/")
+      .then(res => res.json()) // Parse the response as JSON
+      .then(data => { setData(createCameraArray(data)); })
+  }, []);
 
   return (
     <BrowserRouter>
       <Sidebar>
-      <Topbar />
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/Dashboard" element={<Dashboard />} />
-            <Route path="/CameraStatus" element={<CameraStatus />} />
-            <Route path="/TrajectoryStudy" element={<TrajectoryStudy/>} />
-            <Route path="/DataVisualization" element={<DataVisualization />} />
-            <Route path="/Documentation" element={<Documentation />} />
-            <Route path="/AboutUs" element={<AboutUs />} />
-            <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path='/TermsAndConditions' element={<TermsAndCondition />} />
-            {/* <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} /> */}
-            <Route path='/Settings' element={<Settings />} />
-            <Route path='/Profile' element={<Profile />} />
-            <Route path='/Notification' element={<Notification />} />
-            <Route path='/PreviousData' element={<PreviousData />} />
-            <Route path='/AddNewCamera' element={<AddNewCamera />} />
-          </Routes>
+        <Topbar />
+        <Routes>
+          <Route path="/" element={<Dashboard data = {data}/>} />
+          <Route path="/Dashboard" element={<Dashboard data = {data}/>} />
+          <Route path="/CameraStatus" element={<CameraStatus data = {data} />} />
+          <Route path="/TrajectoryStudy" element={<TrajectoryStudy data = {data}/>} />
+          <Route path="/DataVisualization" element={<DataVisualization />} />
+          <Route path="/Documentation" element={<Documentation />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path='/TermsAndConditions' element={<TermsAndCondition />} />
+          {/* <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} /> */}
+          <Route path='/Settings' element={<Settings />} />
+          <Route path='/Profile' element={<Profile />} />
+          <Route path='/Notification' element={<Notification />} />
+          <Route path='/PreviousData' element={<PreviousData />} />
+          <Route path='/AddNewCamera' element={<AddNewCamera />} />
+        </Routes>
       </Sidebar>
     </BrowserRouter>
   );

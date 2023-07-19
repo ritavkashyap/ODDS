@@ -1,5 +1,5 @@
 .overlay {
-    width: 50rem;
+    /* width: 50rem; */
     position: fixed;
     top: 0;
     bottom: 0;
@@ -36,4 +36,7 @@
   .popup .content {
     max-height: 30%;
     overflow: auto;
+  }
+  .button {
+    cursor: pointer;
   }
