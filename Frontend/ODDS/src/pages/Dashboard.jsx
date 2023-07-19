@@ -1,11 +1,12 @@
 import React from 'react'
-import Maps from '../components/Maps'
+import MapDash from '../components/MapDash'
+import PopUpDroneDash from '../components/PopUpDroneDash'
 
 function Dashboard() {
   return (
     <div>
         <div className="Container">
-        <Maps />
+        <MapDash />
         </div>
     </div>
   )

@@ -32,8 +32,8 @@ function ContactUs() {
           <h2 className='h2'>Contact Us</h2>
           <div className="contactus">
             <div className="name">
-              <input type="text" className='inputbox' placeholder='First Name' />
-              <input type="text" className='inputbox' placeholder='Last Name' />
+              <input type="text" className='inputBox' placeholder='First Name' />
+              <input type="text" className='inputBox' placeholder='Last Name' />
             </div>
             <input type="email" className='inputbox' placeholder='Email' />
             <input type="int" className='inputbox' placeholder='Contact No' />

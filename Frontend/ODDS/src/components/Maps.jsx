@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import Map, { FullscreenControl, GeolocateControl, Marker, NavigationControl } from 'react-map-gl'
+import Map, { Marker } from 'react-map-gl'
 
 function Maps() {
     const [lng, setLng] = useState(92.7880);
@@ -17,7 +17,9 @@ function Maps() {
             }}
             mapStyle="mapbox://styles/mapbox/streets-v9"
         >
+            <Marker color='red' longitude={lng} latitude={lat}></Marker>
         </Map>
+
     )
 }
 

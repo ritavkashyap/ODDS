@@ -1,11 +1,11 @@
 import React from 'react';
-import Maps from '../components/Maps';
+import MapTraj from '../components/MapTraj';
 
 function TrajectoryStudy() {
   return (
     <div>
       <div className="Container">
-        <Maps />
+        <MapTraj />
         </div>
     </div>
 
