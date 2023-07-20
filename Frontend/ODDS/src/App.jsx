@@ -17,19 +17,20 @@ import Profile from './pages/Profile';
 import Notification from './pages/Notification';
 import Topbar from './components/Topbar'
 import AddNewCamera from './pages/AddNewCamera';
+import CameraDetail from './pages/CameraDetail';
 
 // import SerachBar from './components/SerachBar';
 
 function App() {
   const [data, setData] = React.useState([])
 
-console.log(data)
+// console.log(data)
   function createCameraArray(array) {
     const newArray = [];
     for (let i = 0; i < array.length; i++) {
       newArray.push(array[i]);
     }
-    console.log(newArray)
+    // console.log(newArray)
     return newArray;
   }
 
@@ -38,7 +39,7 @@ console.log(data)
     fetch("http://127.0.0.1:8000/api/cameraModels/")
       .then(res => res.json()) // Parse the response as JSON
       .then(data => { setData(createCameraArray(data)); })
-  }, []);
+  }, [data]);
 
   return (
     <BrowserRouter>
@@ -60,6 +61,7 @@ console.log(data)
           <Route path='/Notification' element={<Notification />} />
           <Route path='/PreviousData' element={<PreviousData />} />
           <Route path='/AddNewCamera' element={<AddNewCamera />} />
+          <Route path='/EditCamera/:id' element={<CameraDetail />} />
         </Routes>
       </Sidebar>
     </BrowserRouter>
