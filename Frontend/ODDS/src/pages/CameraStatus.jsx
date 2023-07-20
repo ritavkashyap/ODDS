@@ -7,14 +7,12 @@ function CameraStatus(props) {
   const data = props.data;
   let navigate = useNavigate();
   const setData = props.setData;
+
   const routeChange = (path) => {
     console.log("changing route")
     navigate(path);
   }
-  function editCamera(id){
-    console.log(id)
-    
-  }
+
   function deleteCamera(id){
     axios
       .delete(`http://127.0.0.1:8000/api/cameraModels/${id}`)
@@ -35,7 +33,6 @@ function CameraStatus(props) {
       framerate = {item.framerate}
       p2puid = {item.p2puid}
       deleteCamera={deleteCamera}
-      editCamera={editCamera}
       />
     )
   })
