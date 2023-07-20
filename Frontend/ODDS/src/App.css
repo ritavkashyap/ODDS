@@ -268,3 +268,31 @@ main {
     color: #fff;
     cursor: pointer;
 }
+.statbox {
+    width: 50rem;
+    display: flex;
+    flex-direction: column; 
+    transition: 0.5s;
+}
+.cambox {
+    margin: 10px;
+}
+.camstatbox {
+    width: 15rem;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.camboxstat {
+    padding: 5px;
+    margin-left: 10px;
+}
+.videofeed {
+    width: 30rem;
+    height: 15rem;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+

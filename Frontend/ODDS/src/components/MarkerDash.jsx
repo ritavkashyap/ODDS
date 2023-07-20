@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import Map, { Marker, Popup } from 'react-map-gl'
-import '../styles/popup.css'
+import React from 'react'; 
+import Map, { Marker } from 'react-map-gl';
 import { FaBroadcastTower } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function MarkerDash(props) {
-    const [camdata, setCamdata] = useState(null);
-    useEffect(() => {
-        const listener = e => {
-            if (e.key === "Escape") {
-                setCamdata(null);
-            }
-        };
-        window.addEventListener("keydown", listener);
+    const Navigate = useNavigate()
+    
+    // const [popupInfo, setPopupInfo] = React.useState(null);
 
-        return () => {
-            window.removeEventListener("keydown", listener);
-        };
-    }, []);
-    console.log(props.title)
+    // const handleMarkerClick = (markerInfo) => {
+    //     setPopupInfo(markerInfo);
+    // };
     return (
 
         <div className="marker">
@@ -26,20 +19,9 @@ function MarkerDash(props) {
                 latitude={props.latitude}
                 longitude={props.longitude}
                 className='mapcam'
-                onClick={setCamdata}
+                onClick={() => Navigate('#statusBar')}
             >
-                <a className="button" href="#popup1"><FaBroadcastTower size='1.5rem' color='green' /></a>
-
-                <div id="popup1" className="overlay">
-                    <div className="popup">
-                        <h2>{props.title} Status</h2>
-                        <a className="close" href="#">&times;</a>
-                        <div className="content">
-                        {props.title}
-                        {props.altitude}
-                        </div>
-                    </div>
-                </div>
+                <FaBroadcastTower size='2rem' color='green' />
             </Marker>
         </div>
 
@@ -47,3 +29,40 @@ function MarkerDash(props) {
 }
 
 export default MarkerDash
+
+
+/*import React from 'react';
+import ReactMapboxGl, { Marker, Popup } from 'react-mapbox-gl';
+
+const Map = ReactMapboxGl({
+  accessToken: 'YOUR_ACCESS_TOKEN',
+});
+
+const App = () => {
+  const [popupInfo, setPopupInfo] = React.useState(null);
+
+  const handleMarkerClick = (markerInfo) => {
+    setPopupInfo(markerInfo);
+  };
+
+  return (
+    <Map
+      style="mapbox://styles/mapbox/streets-v11"
+      containerStyle={{
+        height: '100vh',
+        width: '100vw',
+      }}
+    >
+      <Marker coordinates={[-122.4443, 47.2529]} onClick={() => handleMarkerClick('Seattle')}>
+        <img src="https://placekitten.com/50/50" alt="Seattle" />
+      </Marker>
+
+      {popupInfo && (
+        <Popup coordinates={[-122.4443, 47.2529]} onClose={() => setPopupInfo(null)}>
+          <div>{popupInfo}</div>
+        </Popup>
+      )}
+    </Map>
+  );
+};
+*/
