@@ -2,26 +2,16 @@ import React from 'react'
 import data from "../pages/data"
 
 function CamCard(props) {
-    var deleteCamera = (id) => {
-        for (let i = 0; i < data.length; i++) {
-            const element = data[i];
-            if (element["id"] === id) {
-                data.splice(i, 1)
-                console.log(id)
-            }
+    // var editCamera = (id) => {
+    //     for (let i = 0; i < data.length; i++) {
+    //         const element = data[i];
+    //         if (element["id"] === id) {
+    //             data.splice(i, 1)
+    //             console.log(id)
+    //         }
 
-        }
-    }
-    var editCamera = (id) => {
-        for (let i = 0; i < data.length; i++) {
-            const element = data[i];
-            if (element["id"] === id) {
-                data.splice(i, 1)
-                console.log(id)
-            }
-
-        }
-    }
+    //     }
+    // }
     console.log(props)
     return (
         <div className="CamBox">
@@ -32,8 +22,8 @@ function CamCard(props) {
                 <div className="CamHeader">
                     {props.title}
                     <div className='btndiv'>
-                        <button className='editbtn' onClick={editCamera(props.id)}>Edit</button>
-                        <button className='delbtn' onClick={deleteCamera(props.id)}>Delete</button>
+                        <button className='editbtn' onClick={()=>props.editCamera(props.id)}>Edit</button>
+                        <button className='delbtn' onClick={()=>props.deleteCamera(props.id)}>Delete</button>
                     </div>
                 </div>
                 <div className="miniBox">

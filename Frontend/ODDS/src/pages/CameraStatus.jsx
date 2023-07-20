@@ -1,40 +1,27 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import CamCard from '../components/CamCard';
-// import data from "../pages/data"
-// import { useNavigate } from "react-router-dom";
-// import CamCard from '../components/CamCard';
-// import data from "../pages/data"
-
+import axios from "axios"
 function CameraStatus(props) {
-// console.log(props)
-  // const [data, setData] = React.useState([])
-  
-  // function createCameraArray(array) {
-  //   const newArray = [];
-  //   for(let i=0; i<array.length; i++){
-  //     newArray.push(array[i]);
-  //   }
-  //   console.log(newArray)
-  //   return newArray;
-  // }
-
-
-  // // // API call
-  // React.useEffect(function() {
-  //   fetch("http://127.0.0.1:8000/api/cameraModels/")
-  //     .then(res => res.json()) // Parse the response as JSON
-  //     .then(data => {setData(createCameraArray(data));})
-  //   }, []);
-
-
 
   const data = props.data;
   let navigate = useNavigate();
-  const routeChange = () => {
-    let path = `/AddNewCamera`;
+  const setData = props.setData;
+  const routeChange = (path) => {
+    console.log("changing route")
     navigate(path);
   }
+  function editCamera(id){
+    console.log(id)
+    
+  }
+  function deleteCamera(id){
+    axios
+      .delete(`http://127.0.0.1:8000/api/cameraModels/${id}`)
+      .then(res => setData(data))
+      routeChange(`/CameraStatus`)
+  }
+
   const CamCards = data.map(item =>{
     return(
       <CamCard 
@@ -47,6 +34,8 @@ function CameraStatus(props) {
       resolution = {item.resolution}
       framerate = {item.framerate}
       p2puid = {item.p2puid}
+      deleteCamera={deleteCamera}
+      editCamera={editCamera}
       />
     )
   })
@@ -54,7 +43,7 @@ function CameraStatus(props) {
     
     <div>
       <div className='addNewBtnCont'>
-        <button className='addNewBtn' onClick={routeChange}>Add New</button>
+        <button className='addNewBtn' onClick={()=>routeChange(`/AddNewCamera`)}>Add New</button>
       </div>
       <div className="CamContainer">
         <div className="scrolling">

@@ -47,7 +47,7 @@ console.log(data)
         <Routes>
           <Route path="/" element={<Dashboard data = {data}/>} />
           <Route path="/Dashboard" element={<Dashboard data = {data}/>} />
-          <Route path="/CameraStatus" element={<CameraStatus data = {data} />} />
+          <Route path="/CameraStatus" element={<CameraStatus data = {data} setData={setData} />} />
           <Route path="/TrajectoryStudy" element={<TrajectoryStudy data = {data}/>} />
           <Route path="/DataVisualization" element={<DataVisualization />} />
           <Route path="/Documentation" element={<Documentation />} />
