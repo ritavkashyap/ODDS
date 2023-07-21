@@ -53,6 +53,7 @@ main {
     margin-left: 50px;
     margin-top: 10px;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .hr-bar {
@@ -216,6 +217,7 @@ main {
     margin-bottom: 10px;
 }
 .addNewBtn {
+    cursor: pointer;
     transition: 0.2s;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 10px;
@@ -224,7 +226,8 @@ main {
 }
 .addNewBtn:hover {
     transition: 0.2s;
-    background-color: lightskyblue;
+    background-color: #1A64AE;
+    color: #fff;
     
 }
 
