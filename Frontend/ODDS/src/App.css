@@ -137,6 +137,7 @@ main {
 }
 
 .DocBox {
+    width: 100rem;
     background-color: #fff;
     border-radius: 20px;
     margin-left: 15px;

@@ -13,3 +13,10 @@ class Camera(models.Model):
 
     def __str__(self):
         return self.title
+    
+class TrajectoryImage(models.Model):
+    P2PUID=models.CharField(max_length=50)
+    image=models.ImageField(upload_to="camera/images", default="")
+
+    def __str__(self):
+        return self.P2PUID
