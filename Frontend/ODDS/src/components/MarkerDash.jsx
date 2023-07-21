@@ -1,10 +1,8 @@
 import React from 'react'; 
 import Map, { Marker } from 'react-map-gl';
 import { FaBroadcastTower } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 
 function MarkerDash(props) {
-    const Navigate = useNavigate()
     
     // const [popupInfo, setPopupInfo] = React.useState(null);
 
@@ -19,7 +17,7 @@ function MarkerDash(props) {
                 latitude={props.latitude}
                 longitude={props.longitude}
                 className='mapcam'
-                onClick={() => Navigate('#statusBar')}
+                onClick={() => props.isOpen}
             >
                 <FaBroadcastTower size='2rem' color='green' />
             </Marker>

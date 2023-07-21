@@ -17,6 +17,8 @@ function MapDash(props) {
                 resolution={item.resolution}
                 framerate={item.framerate}
                 p2puid={item.p2puid}
+                isOpen = {props.isOpen}
+                toggle = {props.toggle}
             />
         )
     })

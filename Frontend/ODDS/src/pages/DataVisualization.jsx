@@ -19,6 +19,7 @@ import {
 } from "recharts"
 
 import { Bar } from 'react-chartjs-2';
+import { Padding } from '@mui/icons-material';
 
 ChartJs.register(
   BarElement,
@@ -34,7 +35,7 @@ function DataVisualization() {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        label: "369",
+        label: "Months",
         data: [100, 135, 260, 321, 350, 120, 521, 122, 222, 21, 233, 6],
         backgroundColor: (context) => {
           const value = context.dataset.data[context.dataIndex];
@@ -49,6 +50,7 @@ function DataVisualization() {
             return 'aqua';
           }
         },
+        barThickness: 50,
         borderColor: 'black',
         borderWidth: 1,
         // height={400}
@@ -61,12 +63,22 @@ function DataVisualization() {
       x: {
         grid: {
           display: false,
+          label: "Months"
         },
+        title:{
+          display: true,
+          text: "Months",
+        }
       },
       y: {
         grid: {
           drawBorder: false,
+          label: "No of drones detected"
         },
+        title:{
+          display: true,
+          text: "No of Drones Detected",          
+        }
       },
     },
     plugins: {
@@ -90,7 +102,7 @@ function DataVisualization() {
     <div className='Container'>
       <div className="scrolling">
         <h1>DataVisualization</h1>
-        <div className="DocBox">
+        <div className="BarchartBox">
         <Bar
           data={data}
           options={options}
