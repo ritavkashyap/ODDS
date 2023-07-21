@@ -39,7 +39,7 @@ function App() {
     fetch("http://127.0.0.1:8000/api/cameraModels/")
       .then(res => res.json()) // Parse the response as JSON
       .then(data => { setData(createCameraArray(data)); })
-  }, [data]);
+  }, []);
 
   return (
     <BrowserRouter>

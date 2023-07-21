@@ -7,6 +7,9 @@ function Dashboard(props) {
   const data = props.data;
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  function toggle2 (){
+    console.log("Togglled")
+  }
   // console.log(props)
   const CamStat = data.map(item =>{
     return(
@@ -28,8 +31,8 @@ function Dashboard(props) {
   return (
     <div>
       <div className="Container">
-        <MapDash data={props.data} />
-        <div style={{ width: isOpen ? "40rem" : "3rem" }} className="statbox">
+        <MapDash data={props.data} toggle2={props.toggle2} isOpen={isOpen}/>
+        <div style={{ width: isOpen ? "30rem" : "3rem", right:'0', transition:'1s' }} className="statbox">
           <div style={{ marginRight:'10px' }} className="bars">
             <FaDotCircle onClick={toggle} className='dot'/>
           </div>

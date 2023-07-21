@@ -34,7 +34,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* transition: all 0.5s; */
+    transition: all 0.5s;
 }
 
 .top_section {
@@ -273,11 +273,10 @@ main {
     cursor: pointer;
 }
 .statbox {
+    
     background-color: rgba(0, 0, 0, 0); /* Black color with 50% opacity */
     position: fixed;
     align-items: end;
-    right: 0;
-    top: 10;
     display: flex;
     flex-direction: column; 
 }
@@ -309,4 +308,8 @@ main {
     margin-left: 15px;
     margin-right: 20px;
     margin-top: 20px;
+}
+.marker-btn {
+    background: none;
+    /* border: none; */
 }

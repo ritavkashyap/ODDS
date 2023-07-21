@@ -18,10 +18,11 @@ function MapDash(props) {
                 framerate={item.framerate}
                 p2puid={item.p2puid}
                 isOpen = {props.isOpen}
-                toggle = {props.toggle}
+                toggle2 = {props.toggle2}
             />
         )
     })
+    // console.log(props.title)
     const [lng, setLng] = useState(92.7880);
     const [lat, setLat] = useState(24.7560);
     const [zoom, setZoom] = useState(14);
