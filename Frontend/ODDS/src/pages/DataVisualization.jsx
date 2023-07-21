@@ -16,6 +16,7 @@ import {
   Pie,
   XAxis,
   YAxis,
+  Legend as PieLegend 
 } from "recharts"
 
 import { Bar } from 'react-chartjs-2';
@@ -35,7 +36,7 @@ function DataVisualization() {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        label: "Months",
+        label: "Drone",
         data: [100, 135, 260, 321, 350, 120, 521, 122, 222, 21, 233, 6],
         backgroundColor: (context) => {
           const value = context.dataset.data[context.dataIndex];
@@ -47,7 +48,7 @@ function DataVisualization() {
           } else if (value >= 100) {
             return 'yellow';
           } else {
-            return 'aqua';
+            return 'lightgreen';
           }
         },
         barThickness: 50,
@@ -77,7 +78,7 @@ function DataVisualization() {
         },
         title:{
           display: true,
-          text: "No of Drones Detected",          
+          text: "No of Drones Detected"       
         }
       },
     },
@@ -101,30 +102,39 @@ function DataVisualization() {
 
     <div className='Container'>
       <div className="scrolling">
-        <h1>DataVisualization</h1>
         <div className="BarchartBox">
+        <h2 className='chartheader'>Bar Chart</h2>
         <Bar
           data={data}
           options={options}
-          height={90}
+          height={60}
           // barThickness = {3}
           // width={50}
         >
         </Bar> 
         </div>
-        <PieChart width={400} height={400}>
+        <div>
+        <div className="piechartbox">
+        <h2 className='piechartheader'>Pie Chart</h2>
+        <PieChart width={600} height={400}>
           <Pie
             dataKey="users"
             isAnimationActive={true}
             data={data2}
             cx={200}
             cy={200}
-            outerRadius={80}
+            outerRadius={120}
              fill="#8884d8" // Default fill color for the pie chart
             label
+            legend
           />
+          <PieLegend align='right' verticalAlign='middle' layout='vertical' />
           <Tooltip />
         </PieChart>
+        </div>
+        </div>
+        
+
       </div>
     </div>
 
