@@ -4,8 +4,9 @@ import Map from 'react-map-gl'
 import MarkerDash from './MarkerDash';
 
 function MapDash(props) {
+
     const data = props.data;
-    // console.log(data)
+
     const MarkerDashes = data.map(item => {
         return (
             <MarkerDash
@@ -22,7 +23,7 @@ function MapDash(props) {
             />
         )
     })
-    // console.log(props.title)
+
     const [lng, setLng] = useState(92.7880);
     const [lat, setLat] = useState(24.7560);
     const [zoom, setZoom] = useState(14);

@@ -17,8 +17,7 @@ function MarkerDash(props) {
         <button
           className="marker-btn"
           onClick={(e) => {
-            e.preventDefault();
-            props.toggle2
+            props.toggle2();
           } }
         >
           <FaBroadcastTower size='2rem' color='green' />
