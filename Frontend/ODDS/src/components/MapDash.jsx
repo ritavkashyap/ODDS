@@ -10,6 +10,7 @@ function MapDash(props) {
     const MarkerDashes = data.map(item => {
         return (
             <MarkerDash
+                id={item.id}
                 ipAddress={item.ipAddress}
                 title={item.title}
                 altitude={item.altitude}
@@ -18,8 +19,8 @@ function MapDash(props) {
                 resolution={item.resolution}
                 framerate={item.framerate}
                 p2puid={item.p2puid}
-                isOpen = {props.isOpen}
-                toggle2 = {props.toggle2}
+                isOpen={props.isOpen}
+                toggle2={props.toggle2}
             />
         )
     })

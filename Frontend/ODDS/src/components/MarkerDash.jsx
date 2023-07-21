@@ -9,20 +9,21 @@ function MarkerDash(props) {
     <div className="marker">
 
       <Marker
+        id={props.id}
         latitude={props.latitude}
         longitude={props.longitude}
         className='mapcam'
       >
-          
+
         <button
           className="marker-btn"
           onClick={(e) => {
             props.toggle2();
-          } }
+          }}
         >
           <FaBroadcastTower size='2rem' color='green' />
         </button>
-        
+
       </Marker>
     </div>
 
