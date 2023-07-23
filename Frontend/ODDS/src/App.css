@@ -315,6 +315,7 @@ main {
 .marker-btn {
     background: none;
     border: none;
+    cursor: pointer;
 }
 .chartheader {
     margin: 20px;
