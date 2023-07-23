@@ -35,7 +35,7 @@ function MapDash(props) {
             initialViewState={{
                 longitude: 92.7880,
                 latitude: 24.7560,
-                zoom: 14
+                zoom: 12
             }}
             mapStyle="mapbox://styles/mapbox/streets-v9"
         >

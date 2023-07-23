@@ -272,13 +272,13 @@ main {
     color: #fff;
     cursor: pointer;
 }
-.statbox {
-    
-    background-color: rgba(0, 0, 0, 0); /* Black color with 50% opacity */
+.statbox {    
+    background-color: rgba(0,0,0,0);   /* Black color with 50% opacity */
     position: fixed;
     align-items: end;
     display: flex;
     flex-direction: column; 
+    right: 0;
 }
 .cambox {
     margin: 10px;

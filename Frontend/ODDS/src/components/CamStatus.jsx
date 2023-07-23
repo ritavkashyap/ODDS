@@ -1,13 +1,21 @@
 import React from 'react'
 
 function CamStatus(props) {
-  // console.log(props.title)
+
+  function style(){
+    if(props.id == props.Checkid){
+      return {display: "block"}
+    }
+    else{
+      return {display: "none"}
+    }
+  }
+
   return (
-    <div>
+    <div style={style()} className='statbox' >
       <div className="cambox" style={{ display: props.isOpen ? "block" : "none" }}>
         <h2>Camera Status</h2>
         <div className='camstatbox'>
-          {/* {console.log(props.title)} */}
           <p className='camboxstat'>Name: {props.title}</p>
           <p className='camboxstat'>ip Address: {props.ipAddress}</p>
           <p className='camboxstat'>Latitude: {props.latitude}</p>
@@ -20,7 +28,6 @@ function CamStatus(props) {
       <div className="cambox" style={{ display: props.isOpen ? "block" : "none" }}>
         <h2>Drone Status</h2>
         <div className='camstatbox'>
-          {/* {console.log(props.title)} */}
           <p className='camboxstat'>Latitude: {props.latitude}</p>
           <p className='camboxstat'>Longitude: {props.longitude}</p>
           <p className='camboxstat'>Altitude: {props.altitude}</p>
