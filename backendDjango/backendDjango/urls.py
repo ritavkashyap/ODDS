@@ -20,10 +20,13 @@ from cameras import views
 from rest_framework import routers
 
 
+
 router = routers.DefaultRouter()
 router.register(r'cameraModels', views.CameraView, 'camera')
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
+    path('video/<int:id>',views.video_feed),
+    path('videofeed/<int:id>', views.get_video_feed_url, name='get_video_feed_url'),
 ]

@@ -30,6 +30,7 @@ function Dashboard(props) {
           p2puid={item.p2puid}
           isOpen={isOpen}
           toggle={toggle}
+          port={item.id-14}
         />
       )    
   })

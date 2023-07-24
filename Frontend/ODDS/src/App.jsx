@@ -18,6 +18,7 @@ import Notification from './pages/Notification';
 import Topbar from './components/Topbar'
 import AddNewCamera from './pages/AddNewCamera';
 import CameraDetail from './pages/CameraDetail';
+import VideoFeed from './pages/VideoFeed';
 
 // import SerachBar from './components/SerachBar';
 
@@ -62,6 +63,7 @@ function App() {
           <Route path='/PreviousData' element={<PreviousData />} />
           <Route path='/AddNewCamera' element={<AddNewCamera />} />
           <Route path='/EditCamera/:id' element={<CameraDetail />} />
+          <Route path='/VideoFeed' element={<VideoFeed />} />
         </Routes>
       </Sidebar>
     </BrowserRouter>
