@@ -107,7 +107,7 @@ function DataVisualization() {
         <Bar
           data={data}
           options={options}
-          height={60}
+          height={'60rem'}
           // barThickness = {3}
           // width={50}
         >

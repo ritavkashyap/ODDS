@@ -9,6 +9,7 @@ function Dashboard(props) {
   const [Checkid, setCheckid] = useState(0);
 
   const toggle = () => setIsOpen(!isOpen);
+  
   function toggle2(Checkid) {
     setCheckid(Checkid)
     setIsOpen(isOpen => !isOpen)
@@ -33,24 +34,12 @@ function Dashboard(props) {
       )    
   })
 
-  function style() {
-    if (isOpen) {
-      return { width: "30rem"};
-    } else {
-      return { width: "3rem"};
-    }
-  }
 
   return (
     <div>
       <div className="Container">
         <MapDash data={props.data} toggle2={toggle2} isOpen={isOpen} />
-        {/* <div style={style()} className="statbox"> */}
-          {/* <div style={{ marginRight: '10px' }} className="bars"> */}
-            {/* <FaDotCircle onClick={toggle} className='dot'/> */}
-          {/* </div> */}
           {CamStat}
-        {/* </div> */}
       </div>
     </div>
   )

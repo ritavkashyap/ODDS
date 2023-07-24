@@ -19,10 +19,7 @@ function ContactUs() {
                   <p><span className="textstyle">Address:</span></p>
                 </div>
                 <div className="addressright">
-                  <p>Production Building,</p>
-                  <p>NIT Silchar Campus, </p> 
-                  <p>NIT Road, Silchar,</p> 
-                  <p>Assam, 788010</p>
+                  <p className="addressright">Production Building, NIT Silchar Campus, NIT Road, Silchar, Assam, 788010</p>
                 </div>
               </div>
             </div>

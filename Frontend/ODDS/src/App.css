@@ -243,6 +243,7 @@ main {
     padding: 1.5rem;
 }
 .delbtn {
+    background-color: #fff;
     transition: 0.2s;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -252,6 +253,7 @@ main {
     border: 1px solid black;
 }
 .editbtn {
+    background-color: #fff;
     transition: 0.2s;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -301,7 +303,7 @@ main {
     border-radius: 10px;
 }
 .BarchartBox {
-    width: 90vw;
+    width: 80vw;
     height: 45vh;
     display: flex;
     flex-direction: column;

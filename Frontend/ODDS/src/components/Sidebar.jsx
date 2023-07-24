@@ -9,8 +9,11 @@ import {
     FaDatabase,
     FaBook,
     FaUserFriends,
-    FaPhoneAlt
+    FaPhoneAlt,
+    FaChevronCircleRight,
+    FaChevronCircleLeft
 } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
 
 
@@ -67,7 +70,8 @@ const Sidebar = ({ children }) => {
                         <NavLink to={"/"} key={1} style={{ backgroundColor: '#FFF' }}><img src={Logo} alt="Full-logo" style={{ display: isOpen ? "block" : "none" }} className="logo" /></NavLink>
                         {/* <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1> */}
                         <div style={{ marginLeft: isOpen ? "40px" : "8px" }} className="bars">
-                            <FaBars onClick={toggle} />
+                            <FaChevronCircleRight onClick={toggle} style={{ display: isOpen ? "none" : "block" }}/>
+                            <FaChevronCircleLeft onClick={toggle} style={{ display: isOpen ? "block" : "none" }}/>
                         </div>
                     </div>
                     <hr className='hr-bar' style={{ display: isOpen ? "block" : "none" }} />
