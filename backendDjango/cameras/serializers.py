@@ -9,4 +9,4 @@ class CameraSerializer(serializers.ModelSerializer):
 class TrajectoryImage(serializers.ModelSerializer):
     class Meta:
         model = TrajectoryImage
-        fields = ('id', 'P2PUID', 'image')
+        fields = ('id', 'CameraId', 'DroneId' ,'image','DateTime')

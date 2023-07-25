@@ -4,7 +4,7 @@ from django.db import models
 class Camera(models.Model):
     title = models.CharField(max_length=50)
     ipAddress = models.CharField(max_length=100)
-    P2PUID = models.CharField(max_length=50, blank=True)
+    P2PUID = models.CharField(max_length=50)
     latitude = models.CharField(max_length=50)
     longitude = models.CharField(max_length=50)
     altitude = models.CharField(max_length=50)
@@ -15,8 +15,11 @@ class Camera(models.Model):
         return self.title
     
 class TrajectoryImage(models.Model):
-    P2PUID=models.CharField(max_length=50)
-    image=models.ImageField(upload_to="camera/images", default="")
+    CameraId=models.CharField(max_length=50, null=True)
+    DroneId=models.CharField(max_length=50, null=True)
+    image=models.ImageField(upload_to="camera/TrajectoryImages", default="")
+    DateTime=models.DateTimeField(null=True,unique=True)
+
 
     def __str__(self):
-        return self.P2PUID
+        return self.CameraId

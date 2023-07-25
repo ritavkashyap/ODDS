@@ -7,7 +7,7 @@ from .models import TrajectoryImage
 class CameraAdmin(admin.ModelAdmin):
     list_display = ("title", "ipAddress", "P2PUID", "latitude", "longitude", "altitude", "resolution", "framerate")
 class TrajectoryImageAdmin(admin.ModelAdmin):
-    list_display = ('P2PUID', 'image')
+    list_display = ('CameraId', 'DroneId' ,'image','DateTime')
 
 
 # Register your models here.

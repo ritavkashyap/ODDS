@@ -1,14 +1,14 @@
 import React from 'react'
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function CamStatus(props) {
-console.log(props.port)
-  function style(){
-    if(props.id == props.Checkid){
-      return {display: "block"}
+  // console.log(props.port)
+  function style() {
+    if (props.id == props.Checkid) {
+      return { display: "block" }
     }
-    else{
-      return {display: "none"}
+    else {
+      return { display: "none" }
     }
   }
   const [videoUrl, setVideoUrl] = React.useState('');
@@ -30,7 +30,7 @@ console.log(props.port)
   }, []);
   return (
     <div style={style()} className='statbox' >
-      <div className="cambox" style={{ display: props.isOpen ? "block" : "none" }}>
+{props.visible &&      <div className="cambox" style={{ display: props.isOpen ? "block" : "none" }}>
         <h2>Camera Status</h2>
         <div className='camstatbox'>
           <p className='camboxstat'>Name: {props.title}</p>
@@ -41,8 +41,8 @@ console.log(props.port)
           <p className='camboxstat'>Resolution: {props.resolution}</p>
           <p className='camboxstat'>Frame Rate: {props.frameRate}</p>
         </div>
-      </div>
-      <div className="cambox" style={{ display: props.isOpen ? "block" : "none" }}>
+      </div>}
+{props.visible &&      <div className="cambox" style={{ display: props.isOpen ? "block" : "none" }}>
         <h2>Drone Status</h2>
         <div className='camstatbox'>
           <p className='camboxstat'>Latitude: {props.latitude}</p>
@@ -50,15 +50,15 @@ console.log(props.port)
           <p className='camboxstat'>Altitude: {props.altitude}</p>
           <p className='camboxstat'>Type: </p>
         </div>
-      </div>
+      </div>}
       <div className="cambox" style={{ display: props.isOpen ? "block" : "none" }}>
-        <h2>Live video Feed</h2>
+        <h2>{props.title}</h2>
         <div className="videofeed">
-        {videoUrl ? (
-          <img src={videoUrl} alt="Video Feed" width="640" height="480" />
-        ) : (
-          <p>Loading...</p>
-        )}
+          {videoUrl ? (
+            <img src={videoUrl} alt="Video Feed" width="640" height="480" />
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
     </div>

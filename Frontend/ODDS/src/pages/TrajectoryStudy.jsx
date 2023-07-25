@@ -1,25 +1,37 @@
+// THIS COMPONENT IS USELESS
+
 import React, { useState } from 'react';
 import MapDash from '../components/MapDash';
 import CamTraj from '../components/CamTraj';
+import CamStatus from '../components/CamStatus'
 import Map, { Source, Layer, Marker } from 'react-map-gl'
 import { FaBroadcastTower } from 'react-icons/fa';
 
 
 function TrajectoryStudy(props) {
-
-  const data = props.data;
-  const [lng, setLng] = useState(92.7885);
-  const [lat, setLat] = useState(24.7558);
-  const [zoom, setZoom] = useState(18);
+  const data = props.data;    
   const [isOpen, setIsOpen] = useState(false);
   const [Checkid, setCheckid] = useState(0);
 
   const toggle = () => setIsOpen(!isOpen);
-
+  
   function toggle2(Checkid) {
     setCheckid(Checkid)
     setIsOpen(isOpen => !isOpen)
   }
+  // const data = props.data;
+  const [lng, setLng] = useState(92.7885);
+  const [lat, setLat] = useState(24.7558);
+  const [zoom, setZoom] = useState(14);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [Checkid, setCheckid] = useState(0);
+
+  // const toggle = () => setIsOpen(!isOpen);
+
+  // function toggle2(Checkid) {
+  //   setCheckid(Checkid)
+  //   setIsOpen(isOpen => !isOpen)
+  // }
   const CamTrajectory = data.map((item) => {
     return (
       <CamTraj
@@ -101,7 +113,7 @@ function TrajectoryStudy(props) {
             <button
               className="marker-btn"
               onClick={() => {
-                props.toggle2(props.id);
+                toggle2(props.id);
               }}
             >
               <FaBroadcastTower size='2rem' color='green' />
