@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard.jsx';
+import DroneMap from './pages/DroneMap';
+import LiveVideoFeed from './pages/LiveVideoFeed'
 import AboutUs from './pages/AboutUs.jsx';
 import DataVisualization from './pages/DataVisualization.jsx';
 import Documentation from './pages/Documentation.jsx';
@@ -47,10 +49,12 @@ function App() {
       <Sidebar>
         <Topbar />
         <Routes>
-          <Route path="/" element={<Dashboard visible={1} data = {data}/>} />
-          <Route path="/Dashboard" element={<Dashboard visible={1} data = {data}/>} />
+          <Route path="/" element={<Dashboard data = {data}/>} />
+          <Route path="/Dashboard" element={<Dashboard data = {data}/>} />
+          <Route path="/DroneMap" element={<DroneMap visible={1} data = {data}/>}  />
+          <Route path="/LiveVideoFeed" element={<LiveVideoFeed data = {data} setData={setData} />} />
           <Route path="/CameraStatus" element={<CameraStatus data = {data} setData={setData} />} />
-          <Route path="/TrajectoryStudy" element={<Dashboard visible={0} data = {data}/>} />
+          <Route path="/TrajectoryStudy" element={<TrajectoryStudy visible={0} data = {data}/>} />
           <Route path="/DataVisualization" element={<DataVisualization />} />
           <Route path="/Documentation" element={<Documentation />} />
           <Route path="/AboutUs" element={<AboutUs />} />

@@ -4,7 +4,7 @@ function PreviousData() {
   return (
     <div className="Container">
       <div className="scrolling">
-
+        Previous Data
       </div>
     </div>
   )

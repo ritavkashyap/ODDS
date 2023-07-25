@@ -13,8 +13,8 @@ function CamCard(props) {
                 <div className="CamHeader">
                     {props.title}
                     <div className='btndiv'>
-                        <button className='editbtn' onClick={()=>{navigate(`/EditCamera/${props.id}`)}}>Edit</button>
-                        <button className='delbtn' onClick={()=>props.deleteCamera(props.id)}>Delete</button>
+                        <button className='editbtn' onClick={()=>{navigate(`/EditCamera/${props.id}`)}}>EDIT</button>
+                        <button className='delbtn' onClick={()=>props.deleteCamera(props.id)}>DELETE</button>
                     </div>
                 </div>
                 <div className="miniBox">

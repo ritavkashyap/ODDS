@@ -11,7 +11,9 @@ import {
     FaUserFriends,
     FaPhoneAlt,
     FaChevronCircleRight,
-    FaChevronCircleLeft
+    FaChevronCircleLeft,
+    FaMapMarkedAlt,
+    FaVideo
 } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
@@ -25,6 +27,16 @@ const Sidebar = ({ children }) => {
             path: "/",
             name: "Dashboard",
             icon: <FaHome />
+        },
+        {
+            path: "/DroneMap",
+            name: "Drone Map",
+            icon: <FaMapMarkedAlt />
+        },
+        {
+            path: "/LiveVideoFeed",
+            name: "Live Video Feed",
+            icon: <FaVideo />
         },
         {
             path: "/CameraStatus",

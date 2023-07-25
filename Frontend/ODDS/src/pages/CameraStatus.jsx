@@ -40,7 +40,7 @@ function CameraStatus(props) {
     
     <div>
       <div className='addNewBtnCont'>
-        <button className='addNewBtn' onClick={()=>routeChange(`/AddNewCamera`)}>Add New</button>
+        <button className='addNewBtn' onClick={()=>routeChange(`/AddNewCamera`)}>ADD NEW</button>
       </div>
       <div className="CamContainer">
         <div className="scrolling">
