@@ -16,7 +16,7 @@ def find_depth(right_point, left_point, frame_right, frame_left, baseline,f, alp
     # alpha is the field of view in degrees
     # frame_right/left is the frame from the respective cameras
     f_pixel = 1440
-    print(f_pixel)
+    # print(f_pixel)
 
     x_right = right_point[0]
     x_left = left_point[0]

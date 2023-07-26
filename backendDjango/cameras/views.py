@@ -64,7 +64,7 @@ def stereoVision(request,camera) :
     port_numbers=camera.split('-')
     video_port_l = port_numbers[0]
     video_port_r = port_numbers[1]
-    print(video_port_r)
+    # print(video_port_r)
     vc_left = cv2.VideoCapture(int(video_port_l),cv2.CAP_DSHOW)  # Replace '0' with the correct device index or video file path for the left camera
     vc_right = cv2.VideoCapture(int(video_port_r),cv2.CAP_DSHOW)  # Replace '1' with the correct device index or video file path for the right camera
     trajectory_points = []
@@ -120,7 +120,7 @@ def stereoVision(request,camera) :
             xmax_left = xmin_left + width_left
             ymax_left = ymin_left + height_left
             cv2.rectangle(frame_left, (int(xmin_left), int(ymin_left)), (int(xmax_left), int(ymax_left)), (0, 255, 0), 2)
-            cv2.putText(frame_left, overlay_text_left, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            # cv2.putText(frame_left, overlay_text_left, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
             # Draw bounding box for right frame
             predicted_bbox_coords_right = predicted_bbox_right.squeeze().cpu().numpy().astype(np.float32)
@@ -134,10 +134,10 @@ def stereoVision(request,camera) :
             xmax_right = xmin_right + width_right
             ymax_right = ymin_right + height_right
             cv2.rectangle(frame_right, (int(xmin_right), int(ymin_right)), (int(xmax_right), int(ymax_right)), (0, 255, 0), 2)
-            cv2.putText(frame_right, overlay_text_right, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            # cv2.putText(frame_right, overlay_text_right, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             
-            center_left = (xmin_left + width_left/2,ymin_left+height_left)
-            center_right = (xmax_left + width_right/2,ymin_right+height_right)
+            center_left = (xmin_left + width_left/2,ymin_left+height_left/2)
+            center_right = (xmax_left + width_right/2,ymin_right+height_right/2)
             
             # center calculation
             lcx , lcy = center_left
