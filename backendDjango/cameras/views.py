@@ -9,6 +9,9 @@ from django.views.decorators import gzip
 import numpy as np
 import cv2
 from .alexnet import *
+from .distanceFromEdgeDev import *
+from .locationCoordinates import *
+from .trajectoryInCamera import trajectoryPlot
 
 # from .distanceColor import *
 # from .locationCoordinates import *
@@ -64,6 +67,7 @@ def stereoVision(request,camera) :
     print(video_port_r)
     vc_left = cv2.VideoCapture(int(video_port_l),cv2.CAP_DSHOW)  # Replace '0' with the correct device index or video file path for the left camera
     vc_right = cv2.VideoCapture(int(video_port_r),cv2.CAP_DSHOW)  # Replace '1' with the correct device index or video file path for the right camera
+    trajectory_points = []
     def generate_frames_combined() : 
         while True:
             ret_left, frame_left = vc_left.read()
@@ -131,6 +135,36 @@ def stereoVision(request,camera) :
             ymax_right = ymin_right + height_right
             cv2.rectangle(frame_right, (int(xmin_right), int(ymin_right)), (int(xmax_right), int(ymax_right)), (0, 255, 0), 2)
             cv2.putText(frame_right, overlay_text_right, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            
+            center_left = (xmin_left + width_left/2,ymin_left+height_left)
+            center_right = (xmax_left + width_right/2,ymin_right+height_right)
+            
+            # center calculation
+            lcx , lcy = center_left
+            trajectory_points.append((lcx,lcy))
+            frame_left  = trajectoryPlot(frame_left,trajectory_points)
+            
+            # distance calcualtion
+            baseline = 7
+            f  = 0
+            alpha = 60
+            depth = find_depth(center_left,center_right,frame_left,frame_right,baseline,f,alpha)
+            
+            # coordinates calculation
+            lat1 = 24.67676
+            long1 = 76.656565
+            lat , long = get_point_at_distance(lat1,long1,depth,0)
+
+            cv2.putText(frame_left,"distance %d" % depth, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            cv2.putText(frame_right,"lat %d " % lat, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+
+            
+            
+            
+            
+            
+            
+            
             combined_frame = np.hstack((frame_left,frame_right))
             ret, buffer = cv2.imencode('.jpg', combined_frame)
             combined_frame = buffer.tobytes()
