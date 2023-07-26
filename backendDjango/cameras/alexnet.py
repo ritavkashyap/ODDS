@@ -83,7 +83,7 @@ transform = transforms.Compose([
                          std=[0.229, 0.224, 0.225])
 ])
 
-model.load_state_dict(torch.load(f"myappTest/900_dataset_epoch.pt"))
+model.load_state_dict(torch.load(f"cameras/900_dataset_epoch.pt"))
 # model = model.double()
 print("model loaded")
 

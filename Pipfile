@@ -10,6 +10,11 @@ django-cors-headers = "*"
 pillow = "*"
 numpy = "*"
 opencv-python = "*"
+torch = "*"
+torchvision = "*"
+matplotlib = "*"
+pandas = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
