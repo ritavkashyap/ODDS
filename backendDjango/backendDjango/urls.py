@@ -29,4 +29,5 @@ urlpatterns = [
     path("api/", include(router.urls)),
     path('video/<int:id>',views.video_feed),
     path('videofeed/<int:id>', views.get_video_feed_url, name='get_video_feed_url'),
+    path('stereoVideo/<str:camera>',views.stereoVision),
 ]
