@@ -79,12 +79,10 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="Container">
-      <div className="scrolling">
+      <div className="DashContainer">
         <div className='CameraContainer'>
           {DashCams}
         </div>
-      </div>
     </div>
     </div>
   )

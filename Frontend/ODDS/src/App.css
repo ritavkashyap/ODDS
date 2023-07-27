@@ -81,6 +81,12 @@ main {
     flex-direction: column;
     justify-content: end;
 }
+.sidebarTop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: start; */
+}
 
 .bottom_text1:hover {
     color: #02C095;
@@ -234,10 +240,41 @@ main {
 
 }
 
-.DashCamera {
+.DashContainer {
+    background-color: #00000000;
+    display: flex;
+    height: 69vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+}
+.DashindividualCam {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 33vw;
+    height: 21vh;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 14px;
+    border: none;
+    margin: 10px;
+    padding: 59px;
+}
+.DashCam {
+    width: 384px;
+    height: 288px;
+    background-color: yellow;
+}
+.Dashcontmain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Dsahmap {
 
 }
-
 .DocBox {
     background-color: #fff;
     border-radius: 20px;

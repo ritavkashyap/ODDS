@@ -22,14 +22,22 @@ function IndividualCam(props) {
     }, []);
 
     return (
-        <div className='individualCam' >
-            <h2>{props.title}</h2>
+        <div className='DashindividualCam' >
             <div className="DashCam">
                 {videoUrl ? (
-                    <img src={videoUrl} alt="Video Feed" width="640" height="480" />
+                    <img src={videoUrl} alt="Video Feed" width="384" height="288" />
                 ) : (
                     <p>Loading...</p>
                 )}
+            </div>
+            <div className="DashContRight">
+                <div className="Dashmap">
+                    map Here
+                </div>
+                <div className="Dashcamstatus">
+                    <h2>{props.title}</h2>
+                    cam Details
+                </div>
             </div>
         </div>
     )
