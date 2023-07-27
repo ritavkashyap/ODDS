@@ -26,7 +26,7 @@ function IndividualCam(props) {
             <h2>{props.title}</h2>
             <div className="insideIndividualCam">
                 {videoUrl ? (
-                    <img src={videoUrl} alt="Video Feed" width="640" height="480"/>
+                    <img src={videoUrl} alt="Video Feed" width="640" height="480" />
                 ) : (
                     <p>Loading...</p>
                 )}
