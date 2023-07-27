@@ -12,9 +12,23 @@ import {
 import {
   BiSolidBellRing
 } from 'react-icons/bi';
+import DashCam from '../components/DashCam'
+
+// Shows the Live Video Feed of all the cameras connected
 
 
-function Dashboard() {
+function Dashboard(props) {
+  const data = props.data;
+
+  const DashCams = data.map((item) => {
+    return (
+      <DashCam
+        title={item.title}
+        port={item.id - 14}
+        visible={props.visible}
+      />
+    )
+  })
   const user = "RITAV";
   return (
     <div>
@@ -65,6 +79,13 @@ function Dashboard() {
           </div>
         </div>
       </div>
+      <div className="Container">
+      <div className="scrolling">
+        <div className='CameraContainer'>
+          {DashCams}
+        </div>
+      </div>
+    </div>
     </div>
   )
 }

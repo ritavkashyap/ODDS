@@ -43,8 +43,8 @@ function App() {
       <Sidebar>
         <Topbar />
         <Routes>
-          <Route path="/" element={<Dashboard data = {data}/>} />
-          <Route path="/Dashboard" element={<Dashboard data = {data}/>} />
+          <Route path="/" element={<Dashboard etData={setData} data = {data}/>} />
+          <Route path="/Dashboard" element={<Dashboard etData={setData} data = {data}/>} />
           <Route path="/DroneMap" element={<DroneMap visible={1} data = {data}/>}  />
           <Route path="/LiveVideoFeed" element={<LiveVideoFeed data = {data} setData={setData} />} />
           <Route path="/CameraStatus" element={<CameraStatus data = {data} setData={setData} />} />
