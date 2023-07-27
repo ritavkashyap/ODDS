@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 
 function CamStatus(props) {
-  // console.log(props.port)
   function style() {
     if (props.id == props.Checkid) {
       return { display: "block" }

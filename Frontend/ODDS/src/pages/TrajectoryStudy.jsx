@@ -19,19 +19,11 @@ function TrajectoryStudy(props) {
     setCheckid(Checkid)
     setIsOpen(isOpen => !isOpen)
   }
-  // const data = props.data;
+
   const [lng, setLng] = useState(92.7885);
   const [lat, setLat] = useState(24.7558);
   const [zoom, setZoom] = useState(14);
-  // const [isOpen, setIsOpen] = useState(false);
-  // const [Checkid, setCheckid] = useState(0);
 
-  // const toggle = () => setIsOpen(!isOpen);
-
-  // function toggle2(Checkid) {
-  //   setCheckid(Checkid)
-  //   setIsOpen(isOpen => !isOpen)
-  // }
   const CamTrajectory = data.map((item) => {
     return (
       <CamTraj

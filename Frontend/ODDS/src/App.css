@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    font-family: 'Kanit', sans-serif;
 }
 
 .container {
@@ -380,3 +381,42 @@ main {
 .piechartheader {
     margin-top: 10px;
 } 
+
+/* Live Video Feed Styling */
+.CameraContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.individualCam{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33vw;
+    height: 50vh;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 14px;
+    border: none;
+    margin: 15px;
+    padding: 59px;
+}
+
+.individualCam>h2{
+    height: 5vh;
+    padding: 14px 0;
+    /* text-align: start; */
+}
+
+.insideIndividualCam{
+    width: 640px;
+    height: 480px;
+    background-color: yellow;
+    border-radius: 17px;
+}
+
+.insideIndividualCam>img{
+    border-radius: 17px;
+}

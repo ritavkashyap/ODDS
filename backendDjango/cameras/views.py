@@ -155,8 +155,8 @@ def stereoVision(request,camera) :
             long1 = 76.656565
             lat , long = get_point_at_distance(lat1,long1,depth,0)
 
-            cv2.putText(frame_left,"distance %d" % depth, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-            cv2.putText(frame_right,"lat %d " % lat, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            # cv2.putText(frame_left,"distance %d" % depth, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            # cv2.putText(frame_right,"lat %d " % lat, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
             
             
@@ -165,13 +165,15 @@ def stereoVision(request,camera) :
             
             
             
-            combined_frame = np.hstack((frame_left,frame_right))
-            ret, buffer = cv2.imencode('.jpg', combined_frame)
-            combined_frame = buffer.tobytes()
+            # combined_frame = np.hstack((frame_left,frame_right))
+            # ret, buffer = cv2.imencode('.jpg', combined_frame)
+            # combined_frame = buffer.tobytes()
+            ret, buffer = cv2.imencode('.jpg', frame_left)
+            frametobuffer = buffer.tobytes()
 
             # Yield the combined frame as a chunk for the streaming response
             yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + combined_frame + b'\r\n\r\n')
+                   b'Content-Type: image/jpeg\r\n\r\n' + frametobuffer + b'\r\n\r\n')
     return StreamingHttpResponse(generate_frames_combined(), content_type='multipart/x-mixed-replace; boundary=frame')
     
 
