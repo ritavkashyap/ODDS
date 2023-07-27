@@ -103,7 +103,7 @@ function DataVisualization() {
     <div className='Container'>
       <div className="scrolling">
         <div className="BarchartBox">
-        <h2 className='chartheader'>Bar Chart</h2>
+        <h2 className='chartheader'>No of Drones Detected per Month</h2>
         <Bar
           data={data}
           options={options}
@@ -115,7 +115,7 @@ function DataVisualization() {
         </div>
         <div>
         <div className="piechartbox">
-        <h2 className='piechartheader'>Pie Chart</h2>
+        <h2 className='piechartheader'>Types of Drone</h2>
         <PieChart width={600} height={400}>
           <Pie
             dataKey="users"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../assets/Full-logo.png'
+import Logo from '../assets/Full-logo2.png'
 import {
     FaHome,
     FaBars,
@@ -77,13 +77,13 @@ const Sidebar = ({ children }) => {
     return (
         <div className="container">
             <div style={{ width: isOpen ? "300px" : "80px" }} className="sidebar">
-                <div>
+                <div className='sidebarTop'>
                     <div className="top_section">
-                        <NavLink to={"/"} key={1} style={{ backgroundColor: '#FFF' }}><img src={Logo} alt="Full-logo" style={{ display: isOpen ? "block" : "none" }} className="logo" /></NavLink>
+                        <NavLink to={"/"} key={1} style={{ backgroundColor: '#1A64AE'}}><img src={Logo} alt="Full-logo" style={{ display: isOpen ? "block" : "none" }} className="logo" /></NavLink>
                         {/* <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1> */}
                         <div style={{ marginLeft: isOpen ? "40px" : "8px" }} className="bars">
-                            <FaChevronCircleRight onClick={toggle} style={{ display: isOpen ? "none" : "block" }}/>
-                            <FaChevronCircleLeft onClick={toggle} style={{ display: isOpen ? "block" : "none" }}/>
+                            <FaChevronCircleRight onClick={toggle} style={{ display: isOpen ? "none" : "block", color:"#fff" }}/>
+                            <FaChevronCircleLeft onClick={toggle} style={{ display: isOpen ? "block" : "none",  color:"#fff" }}/>
                         </div>
                     </div>
                     <hr className='hr-bar' style={{ display: isOpen ? "block" : "none" }} />
