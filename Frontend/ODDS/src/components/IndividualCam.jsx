@@ -1,6 +1,7 @@
 import { BorderAllRounded } from '@mui/icons-material';
 import React from 'react';
 
+// Displays individual cameras in the Live Video Feed window
 function IndividualCam(props) {
 
     const [videoUrl, setVideoUrl] = React.useState('');

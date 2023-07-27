@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Displays the terms and Conditions
 function TermsAndConditions() {
   return (
     <div className='Container'>

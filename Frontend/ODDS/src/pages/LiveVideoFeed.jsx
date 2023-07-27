@@ -1,6 +1,7 @@
 import React from 'react'
 import IndividualCam from '../components/IndividualCam'
 
+// Shows the Live Video Feed of all the cameras connected
 function LiveVideoFeed(props) {
   const data=props.data;
 
@@ -16,7 +17,6 @@ function LiveVideoFeed(props) {
 
   return (
     <div>
-      {/* <h1>Live Video Feed</h1> */}
       <div className='CameraContainer'>
         {IndividualCams}
       </div>

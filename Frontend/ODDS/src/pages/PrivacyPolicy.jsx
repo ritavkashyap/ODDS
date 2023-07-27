@@ -1,8 +1,8 @@
 import React from 'react'
 
+// Displays the privacy policy
 function PrivacyPolicy() {
 
-  console.log("????")
   return (
     <div className='Container'>
       <div className="scrolling">

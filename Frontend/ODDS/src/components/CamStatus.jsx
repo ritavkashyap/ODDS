@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 
+// Displays the camera status
 function CamStatus(props) {
   function style() {
     if (props.id == props.Checkid) {

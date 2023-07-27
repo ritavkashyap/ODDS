@@ -8,7 +8,6 @@ import LiveVideoFeed from './pages/LiveVideoFeed'
 import AboutUs from './pages/AboutUs.jsx';
 import DataVisualization from './pages/DataVisualization.jsx';
 import Documentation from './pages/Documentation.jsx';
-import TrajectoryStudy from './pages/TrajectoryStudy.jsx';
 import CameraStatus from './pages/CameraStatus.jsx';
 import ContactUs from './pages/ContactUs';
 import PreviousData from './pages/PreviousData';
@@ -22,18 +21,13 @@ import AddNewCamera from './pages/AddNewCamera';
 import CameraDetail from './pages/CameraDetail';
 import VideoFeed from './pages/VideoFeed';
 
-// import SerachBar from './components/SerachBar';
-
 function App() {
   const [data, setData] = React.useState([])
-
-// console.log(data)
   function createCameraArray(array) {
     const newArray = [];
     for (let i = 0; i < array.length; i++) {
       newArray.push(array[i]);
     }
-    // console.log(newArray)
     return newArray;
   }
 
@@ -54,7 +48,7 @@ function App() {
           <Route path="/DroneMap" element={<DroneMap visible={1} data = {data}/>}  />
           <Route path="/LiveVideoFeed" element={<LiveVideoFeed data = {data} setData={setData} />} />
           <Route path="/CameraStatus" element={<CameraStatus data = {data} setData={setData} />} />
-          <Route path="/TrajectoryStudy" element={<TrajectoryStudy visible={0} data = {data}/>} />
+          <Route path="/TrajectoryStudy" element={<DroneMap visible={0} data = {data}/>} />
           <Route path="/DataVisualization" element={<DataVisualization />} />
           <Route path="/Documentation" element={<Documentation />} />
           <Route path="/AboutUs" element={<AboutUs />} />

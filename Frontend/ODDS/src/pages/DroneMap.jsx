@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import MapDash from '../components/MapDash'
 import CamStatus from '../components/CamStatus'
-import Map, { Source, Layer, Marker } from 'react-map-gl'
-// import { FaDotCircle } from 'react-icons/fa'
 
 function DroneMap(props) {
   const data = props.data;    
@@ -11,6 +9,7 @@ function DroneMap(props) {
 
   const toggle = () => setIsOpen(!isOpen);
   
+  // Toggles the display of Camera information
   function toggle2(Checkid) {
     setCheckid(Checkid)
     setIsOpen(isOpen => !isOpen)

@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Shows any new notification
 function Notification() {
   return (
     <div className='Container'>

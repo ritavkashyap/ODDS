@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import data from "../pages/data"
 
+// Displays the information of each camera
 function CamCard(props) {
     const navigate = useNavigate();
     return (
