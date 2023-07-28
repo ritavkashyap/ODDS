@@ -120,7 +120,7 @@ def stereoVision(request,camera) :
             xmax_left = xmin_left + width_left
             ymax_left = ymin_left + height_left
             cv2.rectangle(frame_left, (int(xmin_left), int(ymin_left)), (int(xmax_left), int(ymax_left)), (0, 255, 0), 2)
-            # cv2.putText(frame_left, overlay_text_left, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            cv2.putText(frame_left, overlay_text_left, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
             # Draw bounding box for right frame
             predicted_bbox_coords_right = predicted_bbox_right.squeeze().cpu().numpy().astype(np.float32)
@@ -155,8 +155,8 @@ def stereoVision(request,camera) :
             long1 = 76.656565
             lat , long = get_point_at_distance(lat1,long1,depth,0)
 
-            # cv2.putText(frame_left,"distance %d" % depth, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-            # cv2.putText(frame_right,"lat %d " % lat, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            cv2.putText(frame_left,"distance %d" % depth, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            cv2.putText(frame_right,"lat %d " % lat, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
             
             

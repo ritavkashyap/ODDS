@@ -12,26 +12,40 @@ import {
 import {
   BiSolidBellRing
 } from 'react-icons/bi';
-import DashCam from '../components/DashCam'
+import IndividualCam from '../components/IndividualCam';
 
 // Shows the Live Video Feed of all the cameras connected
 
 
 function Dashboard(props) {
+  const [alerts, setAlerts] = React.useState(0)
   const data = props.data;
-
-  const DashCams = data.map((item) => {
+  // console.log(data.length)
+  function IncAlerts() {
+    console.log("Alert")
+    setAlerts(prev => prev + 1);
+  }
+  const IndividualCams = data.map((item) => {
     return (
-      <DashCam
+      <IndividualCam
+        mapShow={1}
         title={item.title}
         port={item.id - 14}
         visible={props.visible}
+        droneDetecting={5}
+        type={"drone"}
+        ipAddress={item.ipAddress}
+        latitude={item.latitude}
+        longitude={item.longitude}
+        direction={"SW"}
+        location={"CDAC"}
+        incAlerts={IncAlerts}
       />
     )
   })
   const user = "RITAV";
   return (
-    <div>
+    <div className='scroll-demo' >
       <div className="dashHeader">
         <div className="contLeft">
           <h1 className='DashHeader'>Hi {user}!</h1>
@@ -44,8 +58,8 @@ function Dashboard(props) {
       <div className="Dashcards">
         <div className="DashcardCont">
           <div className="Dashcardtop">
-            <h2>12</h2>
-            <div><FaCamera color='#1A64AE' size='30px'/></div>
+            <h2>{data.length}</h2>
+            <div><FaCamera color='#1A64AE' size='30px' /></div>
           </div>
           <div className="DashcardBottom">
             <p style={{ fontSize: "22px" }}>Number of Active Cameras</p>
@@ -54,7 +68,7 @@ function Dashboard(props) {
         <div className="DashcardCont">
           <div className="Dashcardtop">
             <h2>134</h2>
-            <div><TbDrone color='#636363' size='30px'/></div>
+            <div><TbDrone color='#636363' size='30px' /></div>
           </div>
           <div className="DashcardBottom">
             <p style={{ fontSize: "22px" }}>Number of Drone Detecting</p>
@@ -63,7 +77,7 @@ function Dashboard(props) {
         <div className="DashcardCont">
           <div className="Dashcardtop">
             <h2>3</h2>
-            <div><GiDeliveryDrone color='#02C095' size='30px'/></div>
+            <div><GiDeliveryDrone color='#02C095' size='30px' /></div>
           </div>
           <div className="DashcardBottom">
             <p style={{ fontSize: "22px" }}>Drone Types</p>
@@ -71,8 +85,8 @@ function Dashboard(props) {
         </div>
         <div className="DashcardCont">
           <div className="Dashcardtop">
-            <h2>4</h2>
-            <div><BiSolidBellRing color='red' size='30px'/></div>
+            <h2>{alerts}</h2>
+            <div><BiSolidBellRing color='red' size='30px' /></div>
           </div>
           <div className="DashcardBottom">
             <p style={{ fontSize: "22px" }}>Active Alerts</p>
@@ -81,9 +95,9 @@ function Dashboard(props) {
       </div>
       <div className="DashContainer">
         <div className='CameraContainer'>
-          {DashCams}
+          {IndividualCams}
         </div>
-    </div>
+      </div>
     </div>
   )
 }
