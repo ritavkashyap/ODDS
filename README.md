@@ -82,7 +82,7 @@ It means your website is running at this address.
 	└── assets<blockquote>
 		└── Full-logo2.png<br>
 		└── IP-Camera.jpg</blockquote>
-	└── comoponents<blockquote>
+	└── components<blockquote>
 		└── CamCard.jsx<br>
 		└── CamStatus.jsx<br>
 		└── CamTraj.jsx<br>
