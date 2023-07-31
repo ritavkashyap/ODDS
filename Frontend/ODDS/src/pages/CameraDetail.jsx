@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function CameraDetail(){
+function CameraDetail(){
     const params = useParams();
     const navigate = useNavigate()
     const [camera, setCamera] = React.useState(null)
@@ -99,3 +99,4 @@ export default function CameraDetail(){
       )
 
 }
+export default CameraDetail

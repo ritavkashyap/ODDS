@@ -5,7 +5,7 @@ function Notification() {
   return (
     <div className='Container'>
       <div className="scrolling">
-
+        <h1>Notification</h1>
       </div>
     </div>
   )

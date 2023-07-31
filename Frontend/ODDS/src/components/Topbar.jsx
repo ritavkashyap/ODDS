@@ -14,7 +14,7 @@ const Topbar = () => {
         <Box
           display="flex" className="searchField"
         >
-          <InputBase  placeholder="Search" />
+          <InputBase  placeholder="Search" style={{width: '100%'}}/>
           <IconButton type="button" className="searchButton">
             <SearchIcon />
           </IconButton>

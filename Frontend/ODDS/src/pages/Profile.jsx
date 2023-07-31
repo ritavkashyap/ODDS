@@ -4,7 +4,7 @@ function Profile() {
   return (
     <div className="Container">
       <div className="scrolling">
-        
+        <h1>Profile</h1>
       </div>
     </div>
   )
